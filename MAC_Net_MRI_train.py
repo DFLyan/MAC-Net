@@ -54,7 +54,7 @@ def train():
 
     y1, y2, y3, y4,\
     r1, r2, r3, r4,\
-    x1, x2, x3, t = cascade_MRI(y1_image, phi=mask, is_train=True, reuse=False)#去除了phi=A
+    x1, x2, x3, t = cascade_MRI(y1_image, phi=mask, is_train=True, reuse=False)
 
     zeros_target = np.zeros_like(y1)
     y_loss = 0.01 * tl.cost.absolute_difference_error(y1, zeros_target, is_mean=True) + \
